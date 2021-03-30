@@ -9,6 +9,9 @@ class BinarySearchTree:
             for item in items:
                 self.insert(item)
 
+    def insert(self, item):
+        pass
+
 
 def insert(self, item):
     if self.is_empty():

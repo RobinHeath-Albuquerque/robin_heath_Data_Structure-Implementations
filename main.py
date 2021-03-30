@@ -14,6 +14,10 @@ from searchtree import BinarySearchTree
 if __name__ == '__main__':
     binary_search_tree = BinarySearchTree()
 
+    items = [50, 99, 37, 41, 12, 22]
+    for item in items:
+        binary_search_tree.insert(item)
+
 from birthday import my_past_trips
 from family import my_family
 from months import months
