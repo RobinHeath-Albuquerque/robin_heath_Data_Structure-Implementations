@@ -1,25 +1,36 @@
-class BSTNode:
-    def __init__(self, val=None):
-        self.left = None
-        self.right = None
-        self.val = val
 
-    def insert(self, val):
-        if not self.val:
-            self.val = val
-            return
+class BinarySearchTree:
+    def __init__(self, items=None):
+        self.root = None
+        self.let_child = None
+        self.right_child = None
+        self.size = 0
+        if items is not None:
+            for item in items:
+                self.insert(item)
 
-        if self.val == val:
-            return
 
-        if val < self.val:
-            if self.left:
-                self.left.insert(val)
-                return
-            self.left = BSTNode(val)
-            return
+def insert(self, item):
+    if self.is_empty():
+        self.root = BinarySearchTree(item)
+        self.size += 1
+        return
 
-        if self.right:
-            self.right.insert(val)
-            return
-        self.right = BSTNode(val)
+    parent = self._find_parent_node_recursive(item, self.root)
+    if parent.data > item:
+        parent.left = BinarySearchTree(item)
+    elif parent.data < item:
+        parent.right = BinarySearchTree(item)
+    self.size += 1
+
+
+def _find_node_iterative(self, item):
+    node = self.root
+
+    while node is not None:
+        if item == node.data:
+            return node
+        elif item < node.data:
+            node = node.left
+        elif item > node.data:
+            node = node.right
